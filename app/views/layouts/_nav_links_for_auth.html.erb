@@ -7,4 +7,6 @@
 <% end %>
 <% if user_signed_in? %>
   <li><%= link_to 'Users', users_path %></li>
+  <li><%= link_to '問題を答える', questions_path %></li>
+  <li><%= link_to 'あなたの回答', answers_path %></li>
 <% end %>
