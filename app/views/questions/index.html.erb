@@ -1,0 +1,11 @@
+<%= form_with scope: :question_answers, url: answers_path, local: :true do |f| %>
+  <% @questions.each do |question| %>
+    <%= question.body %> |
+    <%= question.answer_num %>
+    <%= fields_for "answers[]", question.answers.build do |fi| %>
+      <%= fi.number_field :choice %>
+      <%= fi.hidden_field :question_id, value: question.id %>
+    <% end %><br>
+  <% end %>
+  <%= f.submit %>
+<% end %>

@@ -1,0 +1,6 @@
+<% @answers.each do |answer| %>
+  質問文: <%= answer.question.body %><br>
+  あなたの回答<%= answer.choice %> | 答え: <%= answer.question.answer_num %><br>
+  =><%= answer.is_true? %><br>
+  <hr>
+<% end %>
